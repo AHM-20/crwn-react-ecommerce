@@ -47,9 +47,9 @@ export default class Directory extends Component {
 	render() {
 		return (
 			<div className="directory-menu">
-				{/*curly prackets to access the object variables*/}
-				{this.state.sections.map(({ title, imageUrl, id, size }) => (
-					<MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+				{/*curly prackets to access the object variables. spread operater to get the rest of the variables and give them the same name */}
+				{this.state.sections.map(({ id, ...otherSectionProps }) => (
+					<MenuItem key={id} {...otherSectionProps} />
 				))}
 			</div>
 		);
